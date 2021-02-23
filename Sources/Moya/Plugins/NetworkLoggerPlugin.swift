@@ -103,7 +103,7 @@ private extension NetworkLoggerPlugin {
     }
 
     func logNetworkError(_ error: MoyaError, target: TargetType) -> [String] {
-        //Some errors will still have a response, like errors due to Alamofire's HTTP code validation.
+        //Some errors will still have a response, like errors due to DeprecatedAlamofire's HTTP code validation.
         if let moyaResponse = error.response {
             return logNetworkResponse(moyaResponse, target: target, isFromError: true)
         }

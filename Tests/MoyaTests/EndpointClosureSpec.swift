@@ -1,7 +1,7 @@
 import Foundation
 import Nimble
 import Quick
-import Alamofire
+import DeprecatedAlamofire
 @testable import Moya
 
 final class EndpointClosureSpec: QuickSpec {
@@ -60,11 +60,11 @@ final class EndpointClosureSpec: QuickSpec {
     }
 }
 
-final class SessionMock: Alamofire.Session {
+final class SessionMock: DeprecatedAlamofire.Session {
 
     var uploadMultipartString: String?
 
-    override func upload(multipartFormData: Alamofire.MultipartFormData, with request: URLRequestConvertible, usingThreshold encodingMemoryThreshold: UInt64 = MultipartFormData.encodingMemoryThreshold, interceptor: RequestInterceptor? = nil, fileManager: FileManager = .default) -> UploadRequest {
+    override func upload(multipartFormData: DeprecatedAlamofire.MultipartFormData, with request: URLRequestConvertible, usingThreshold encodingMemoryThreshold: UInt64 = MultipartFormData.encodingMemoryThreshold, interceptor: RequestInterceptor? = nil, fileManager: FileManager = .default) -> UploadRequest {
         let data = try! multipartFormData.encode()
         uploadMultipartString = String(decoding: data, as: UTF8.self)
 

@@ -1,5 +1,5 @@
 import Foundation
-import Alamofire
+import DeprecatedAlamofire
 
 /// Represents "multipart/form-data" for an upload.
 public struct MultipartFormData {

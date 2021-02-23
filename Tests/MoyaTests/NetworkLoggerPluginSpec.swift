@@ -2,7 +2,7 @@ import Quick
 import Nimble
 import Moya
 import Foundation
-import enum Alamofire.AFError
+import enum DeprecatedAlamofire.AFError
 
 final class NetworkLoggerPluginSpec: QuickSpec {
     override func spec() {
@@ -82,7 +82,7 @@ final class NetworkLoggerPluginSpec: QuickSpec {
 
             plugin.didReceive(result, target: GitHub.zen)
 
-            expect(log).to( contain("Error calling zen : underlying(Alamofire.AFError.responseSerializationFailed(reason: Alamofire.AFError.ResponseSerializationFailureReason.inputFileNil), nil)") )
+            expect(log).to( contain("Error calling zen : underlying(DeprecatedAlamofire.AFError.responseSerializationFailed(reason: DeprecatedAlamofire.AFError.ResponseSerializationFailureReason.inputFileNil), nil)") )
         }
 
         it("outputs cURL representation of request") {

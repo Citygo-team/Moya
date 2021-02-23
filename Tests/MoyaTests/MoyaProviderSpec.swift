@@ -110,7 +110,7 @@ final class MoyaProviderSpec: QuickSpec {
             expect(called) == true
         }
 
-        it("accepts a custom Alamofire.Session") {
+        it("accepts a custom DeprecatedAlamofire.Session") {
             let session = Session()
             let provider = MoyaProvider<GitHub>(session: session)
 

@@ -85,7 +85,7 @@ open class MoyaProvider<Target: TargetType>: MoyaProviderType {
 
     open internal(set) var inflightRequests: [Endpoint: [Moya.Completion]] = [:]
 
-    /// Propagated to Alamofire as callback queue. If nil - the Alamofire default (as of their API in 2017 - the main queue) will be used.
+    /// Propagated to DeprecatedAlamofire as callback queue. If nil - the DeprecatedAlamofire default (as of their API in 2017 - the main queue) will be used.
     let callbackQueue: DispatchQueue?
 
     let lock: NSRecursiveLock = NSRecursiveLock()
@@ -95,7 +95,7 @@ open class MoyaProvider<Target: TargetType>: MoyaProviderType {
                 requestClosure: @escaping RequestClosure = MoyaProvider.defaultRequestMapping,
                 stubClosure: @escaping StubClosure = MoyaProvider.neverStub,
                 callbackQueue: DispatchQueue? = nil,
-                session: Session = MoyaProvider<Target>.defaultAlamofireSession(),
+                session: Session = MoyaProvider<Target>.defaultDeprecatedAlamofireSession(),
                 plugins: [PluginType] = [],
                 trackInflights: Bool = false) {
 

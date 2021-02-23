@@ -20,11 +20,11 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Moya/Moya.git", :tag => s.version }
   s.default_subspec = "Core"
   s.swift_version = '5.0'
-  s.cocoapods_version = '>= 1.4.0'  
+  s.cocoapods_version = '>= 1.4.0'
 
   s.subspec "Core" do |ss|
     ss.source_files  = "Sources/Moya/", "Sources/Moya/Plugins/"
-    ss.dependency "Alamofire", "~> 5.0"
+    ss.dependency "DeprecatedAlamofire", "5.4.2"
     ss.framework  = "Foundation"
   end
 

@@ -1,4 +1,4 @@
-import Alamofire
+import DeprecatedAlamofire
 import Foundation
 
 internal struct PropertyListEncoding: ParameterEncoding {

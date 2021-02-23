@@ -107,7 +107,7 @@ final class MoyaProviderIntegrationTests: QuickSpec {
                         expect(response?.statusCode).to(equal(400))
                     }
 
-                    it("uses a custom Alamofire.Manager request generation") {
+                    it("uses a custom DeprecatedAlamofire.Manager request generation") {
                         let session = StubSession()
                         let provider = MoyaProvider<GitHub>(session: session)
 
@@ -354,7 +354,7 @@ final class MoyaProviderIntegrationTests: QuickSpec {
         }
 
         // Resolves ValidationType not working with multipart upload #1590
-        describe("a provider performing a multipart upload with Alamofire validation") {
+        describe("a provider performing a multipart upload with DeprecatedAlamofire validation") {
             let provider = MoyaProvider<HTTPBin>()
             let formData = HTTPBin.createTestMultipartFormData()
 

@@ -1,6 +1,6 @@
 import Foundation
 
-// Workaround for new asynchronous handling of Alamofire's request creation.
+// Workaround for new asynchronous handling of DeprecatedAlamofire's request creation.
 struct RequestTypeWrapper: RequestType {
 
     var request: URLRequest? {

@@ -1,29 +1,29 @@
 import Foundation
-import Alamofire
+import DeprecatedAlamofire
 
-public typealias Session = Alamofire.Session
-internal typealias Request = Alamofire.Request
-internal typealias DownloadRequest = Alamofire.DownloadRequest
-internal typealias UploadRequest = Alamofire.UploadRequest
-internal typealias DataRequest = Alamofire.DataRequest
+public typealias Session = DeprecatedAlamofire.Session
+internal typealias Request = DeprecatedAlamofire.Request
+internal typealias DownloadRequest = DeprecatedAlamofire.DownloadRequest
+internal typealias UploadRequest = DeprecatedAlamofire.UploadRequest
+internal typealias DataRequest = DeprecatedAlamofire.DataRequest
 
-internal typealias URLRequestConvertible = Alamofire.URLRequestConvertible
+internal typealias URLRequestConvertible = DeprecatedAlamofire.URLRequestConvertible
 
 /// Represents an HTTP method.
-public typealias Method = Alamofire.HTTPMethod
+public typealias Method = DeprecatedAlamofire.HTTPMethod
 
 /// Choice of parameter encoding.
-public typealias ParameterEncoding = Alamofire.ParameterEncoding
-public typealias JSONEncoding = Alamofire.JSONEncoding
-public typealias URLEncoding = Alamofire.URLEncoding
+public typealias ParameterEncoding = DeprecatedAlamofire.ParameterEncoding
+public typealias JSONEncoding = DeprecatedAlamofire.JSONEncoding
+public typealias URLEncoding = DeprecatedAlamofire.URLEncoding
 
 /// Multipart form.
-public typealias RequestMultipartFormData = Alamofire.MultipartFormData
+public typealias RequestMultipartFormData = DeprecatedAlamofire.MultipartFormData
 
 /// Multipart form data encoding result.
-public typealias DownloadDestination = Alamofire.DownloadRequest.Destination
+public typealias DownloadDestination = DeprecatedAlamofire.DownloadRequest.Destination
 
-/// Make the Alamofire Request type conform to our type, to prevent leaking Alamofire to plugins.
+/// Make the DeprecatedAlamofire Request type conform to our type, to prevent leaking DeprecatedAlamofire to plugins.
 extension Request: RequestType {
     public var sessionHeaders: [String: String] {
         return delegate?.sessionConfiguration.httpAdditionalHeaders as? [String: String] ?? [:]
@@ -31,7 +31,7 @@ extension Request: RequestType {
 }
 
 /// Represents Request interceptor type that can modify/act on Request
-public typealias RequestInterceptor = Alamofire.RequestInterceptor
+public typealias RequestInterceptor = DeprecatedAlamofire.RequestInterceptor
 
 /// Internal token that can be used to cancel requests
 public final class CancellableToken: Cancellable, CustomDebugStringConvertible {
@@ -129,7 +129,7 @@ final class MoyaRequestInterceptor: RequestInterceptor {
         self.willSend = willSend
     }
 
-    func adapt(_ urlRequest: URLRequest, for session: Alamofire.Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+    func adapt(_ urlRequest: URLRequest, for session: DeprecatedAlamofire.Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         let request = prepare?(urlRequest) ?? urlRequest
         willSend?(request)
         completion(.success(request))

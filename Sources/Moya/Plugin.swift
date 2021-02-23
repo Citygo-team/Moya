@@ -32,8 +32,8 @@ public protocol RequestType {
 
     // Note:
     //
-    // We use this protocol instead of the Alamofire request to avoid leaking that abstraction.
-    // A plugin should not know about Alamofire at all.
+    // We use this protocol instead of the DeprecatedAlamofire request to avoid leaking that abstraction.
+    // A plugin should not know about DeprecatedAlamofire at all.
 
     /// Retrieve an `NSURLRequest` representation.
     var request: URLRequest? { get }

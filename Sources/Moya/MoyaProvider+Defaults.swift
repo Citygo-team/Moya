@@ -25,7 +25,7 @@ public extension MoyaProvider {
         }
     }
 
-    final class func defaultAlamofireSession() -> Session {
+    final class func defaultDeprecatedAlamofireSession() -> Session {
         let configuration = URLSessionConfiguration.default
         configuration.headers = .default
 
